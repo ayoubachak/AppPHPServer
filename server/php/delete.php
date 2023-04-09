@@ -3,12 +3,10 @@ error_reporting(0);
 include("db_config.php");
 // array for JSON response
 $response = array();
-if (isset($_GET['id']) && isset($_GET['name']) && isset($_GET['address'])) {
+if ( isset($_GET['id']) ){
     $id = $_GET['id'];
-    $name = $_GET['name'];
-    $address = $_GET['address'];
 
-    $result = mysqli_query($db, "DELETE FROM info WHERE id='$id' AND name='$name' AND address='$address'");
+    $result = mysqli_query($db, "DELETE FROM info WHERE id='$id'");
 
     $row_count = mysqli_affected_rows($db);
     if ($row_count > 0) {

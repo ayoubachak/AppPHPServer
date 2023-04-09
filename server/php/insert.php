@@ -13,8 +13,12 @@ if (!empty($_POST['name'])) {
     } else {
         $response["success"] = 0;
     }
-    echo json_encode($response);
+}else {
+    $response["success"] = 0;
 }
+echo json_encode($response);
+
+
 
 $db->close();
 ?>
